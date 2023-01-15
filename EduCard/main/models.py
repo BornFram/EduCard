@@ -2,29 +2,40 @@ from django.db import models
 
 
 class Tags(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField('tag',max_length=100)
 
 
 class Classes(models.Model):
-    name = models.IntegerField()
+    name = models.IntegerField('class')
+    def __str__(self):
+        return self.name
 
 
 class Subjects(models.Model):
-    name = models.CharField(200, max_length=200)
+    name = models.CharField('subject',max_length=200)
     clas = models.ForeignKey(Classes, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 class Themes(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField('theme',max_length=200)
     subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 class Items(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField('item',max_length=80)
     description = models.TextField(max_length=300)
     raiting = models.FloatField(default=0)
     tag = models.ManyToManyField(Tags)
     theme = models.ForeignKey(Themes, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 """
