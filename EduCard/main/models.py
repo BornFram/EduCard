@@ -3,10 +3,13 @@ from django.db import models
 
 class Tags(models.Model):
     name = models.CharField('tag',max_length=100)
+    #slug = models.SlugField(max_length=100,blank=True)
+    def __str__(self):
+        return self.name
 
 
 class Classes(models.Model):
-    name = models.IntegerField('class')
+    name = models.CharField('class',max_length=200)
     def __str__(self):
         return self.name
 
@@ -16,7 +19,7 @@ class Subjects(models.Model):
     clas = models.ForeignKey(Classes, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return '{}. {}'.format(self.name,self.clas.name)
 
 
 class Themes(models.Model):
@@ -24,18 +27,18 @@ class Themes(models.Model):
     subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return '{}, {}. {}'.format(self.name, self.subject.name, self.subject.clas.name)
 
 
 class Items(models.Model):
     name = models.CharField('item',max_length=80)
     description = models.TextField(max_length=300)
     raiting = models.FloatField(default=0)
-    tag = models.ManyToManyField(Tags)
+    tag = models.ManyToManyField(Tags, default=None, blank=True)
     theme = models.ForeignKey(Themes, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return '{}, {}, {}. {}'.format(self.name, self.theme.name, self.theme.subject.name, self.theme.subject.clas.name)
 
 
 """
