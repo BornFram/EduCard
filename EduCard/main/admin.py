@@ -12,4 +12,3 @@ admin.site.register(Tags,)#cacoca)
 
 
 
-
