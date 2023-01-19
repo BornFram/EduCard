@@ -5,6 +5,7 @@ from .views import *
 
 urlpatterns = [
     path('catalog/<path:catalogPath>/', catalog, name='catalog'),
+
     path('pa/', personalAccount, name='PA'),
     path('auth/', auth, name='auth'),
 ]

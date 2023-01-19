@@ -2,19 +2,20 @@
 
 {% block content %}
 
-<<main class="d-flex flex-nowrap">
+<
+<main class="d-flex flex-nowrap">
   <h1 class="visually-hidden">Sidebars examples</h1>
 
   <div class="flex-shrink-0 p-3 bg-white " style="width: 250px;">
 
 
-
-
+    {% include "./categories.html" with array=req %}
 
     {% comment %}
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse"
+                data-bs-target="#home-collapse" aria-expanded="true">
 
           Home
         </button>
