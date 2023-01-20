@@ -7,7 +7,6 @@ from .logics import *
 config = json.load(open('main/config/config.json'))
 
 
-
 def home(request):
 
     context={
@@ -15,15 +14,15 @@ def home(request):
         'clas': Classes.objects.all(),
         'popItems': Items.objects.filter(raiting__gte=config.get('mpr'))
     }
-    return render(request,'main/home.html',context=context)
+    return render(request,'main/Home.html',context=context)
 
 
 def catalogURLregen(request):
-    return redirect('home/')
+    return redirect('')
 def catalog(request,catalogPath):
     catalogPath = catalogPath.split('/')
     print('CAT PATH: ',catalogPath)
-    returnHtml = 'main/catalog.html'
+    returnHtml = 'main/Catalog.html'
     li=[]
 
     match len(catalogPath):
@@ -50,7 +49,7 @@ def catalog(request,catalogPath):
         'items': li,
     }
     if len(li) == 0:
-        returnHtml = 'main/home.html'
+        returnHtml = 'main/Home.html'
     return render(request,returnHtml,context=context)
 
 def auth(request):
