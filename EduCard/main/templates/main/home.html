@@ -5,19 +5,7 @@
 <div class="row row-cols-md-3 mb-4 text-center ml-auto d-flex" style="width: 800px;">
 
   {% for i in clas %}
-  <div class="col">
-    <div class="card mb-4 rounded-3 shadow-sm" >
-      <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">{{ i.name }}</h4>
-      </div>
-      <div class="card-body perenos">
-        <img class='image-top' src=".." alt="Card image cap" height="42" width="42">
-        {% comment %}
-        <h5 class="card-title pricing-card-title">{{ i.name }}</h5>
-        {% endcomment %}
-      </div>
-    </div>
-  </div>
+  {% include "./midItemCard.html" %}
   {% endfor %}
 
 </div>
