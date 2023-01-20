@@ -1,17 +1,33 @@
-<div class="col">
-    <div class="card mb-4 rounded-3 shadow-sm" >
-        {% comment %}
-        <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Free</h4>
-        </div>
-        {% endcomment %}
+<!--<div class="col">-->
+<!--    <div class="card mb-4 rounded-3 text-center shadow-sm" >-->
+<!--        {% comment %}-->
+<!--        <div class="card-header py-3">-->
+<!--            <h4 class="my-0 fw-normal">Free</h4>-->
+<!--        </div>-->
+<!--        {% endcomment %}-->
 
-        <div class="card-body perenos">
-            <img class='image-top' src=".." alt="Card image cap" height="42" width="42">
+<!--        <div class="card-body perenos shadow">-->
+<!--            <img class='image-top' src=".." alt="Card image cap" height="42" width="42">-->
 
-            <h5 class="card-title pricing-card-title">{{ i.name }}</h5>
-            <h6><small class="text-muted fw-light">{{ i.id }}</small></h6>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Buy</button>
+<!--            <h5 class="card-title pricing-card-title">{{ i.name }}</h5>-->
+<!--            <h6><small class="text-muted fw-light">{{ i.id }}</small></h6>-->
+<!--            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Buy</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="col my-4">
+    <div class="card shadow">
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <div class="card-body">
+          <h5 class="card-title pricing-card-title">{{ i.name }}</h5>-->
+          <h6><small class="text-muted fw-light">{{ i.id }}</small></h6>-->
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group w-25">
+            <button type="button" class="btn btn btn-outline-secondary">Buy</button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>

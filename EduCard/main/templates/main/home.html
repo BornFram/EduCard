@@ -2,20 +2,14 @@
 
 {% block content %}
 
-<div class="row row-cols-md-3 mb-4 text-center ml-auto d-flex" style="width: 800px;">
+<div class="album" style="padding-top: 15%">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for i in popItems %}
+           {% include "./itemCard.html" %}
+            {% endfor %}
+      </div>
+    </div>
+  </div>
 
-  {% for i in clas %}
-  {% include "./midItemCard.html" %}
-  {% endfor %}
-
-</div>
-
-<div class="row row-cols-md-3 mb-4 text-center ml-auto d-flex" style="width: 800px;">
-
-    {% for i in popItems %}
-    {% include "./itemCard.html" %}
-    {% endfor %}
-
-</div>
-<div class="col-lg-2">000</div>
 {% endblock content %}

@@ -31,12 +31,14 @@
   <div class="b-example-divider b-example-vr"></div>
 
 
-  <div class="row row-cols-1 row-cols-md-4 mb-3 text-center d-flex" style="width: 1000px;">
-
-    {% for i in items %}
-    {% include "./itemCard.html" %}
-    {% endfor %}
-
+  <div class="album bg-light" style="padding-top: 15%">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for i in items %}
+            {% include "./itemCard.html" %}
+            {% endfor %}
+      </div>
+    </div>
   </div>
 
 
