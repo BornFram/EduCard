@@ -6,6 +6,8 @@ from .logics import *
 
 config = json.load(open('main/config/config.json'))
 
+
+
 def home(request):
 
     context={
